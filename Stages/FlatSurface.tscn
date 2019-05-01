@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="FlatSurface" type="CSGBox"]
+use_collision = true
+width = 25.0
+depth = 25.0
