@@ -18,5 +18,5 @@ material/0 = null
 shape = SubResource( 2 )
 
 [node name="ball_cam" type="Camera" parent="."]
-transform = Transform( 0.947502, 0.0937418, -0.305701, 0, 0.95606, 0.293171, 0.319751, -0.27778, 0.905868, -1.66247, 1.59433, 4.92631 )
+transform = Transform( 1, 0, 0, 0, 0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 2.5, 5 )
 script = ExtResource( 2 )

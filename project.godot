@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="super-poli-ball"
-run/main_scene="res://Debug.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
