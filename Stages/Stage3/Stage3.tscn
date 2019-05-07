@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Goal/Goal.tscn" type="PackedScene" id=1]
+
+[node name="Stage3" type="Spatial"]
+
+[node name="start" type="Position3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 13.2054, 4, -15 )
+
+[node name="goal" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2368, 2, 15 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+width = 40.0
+depth = 40.0
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76819, 0.275907, -9.07483 )
+operation = 2
+width = 5.0
+height = 4.0
+depth = 40.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73946, 0.275907, 11.0068 )
+operation = 2
+radius = 2.55142
+height = 4.0005
+sides = 11
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75288, 0.275907, 8.26345 )
+operation = 2
+width = 5.0
+height = 4.0
+depth = 40.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66549, 0.732406, -12.4296 )
+operation = 2
+radius = 2.55142
+height = 4.0005
+sides = 11
