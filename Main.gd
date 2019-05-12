@@ -27,7 +27,7 @@ func _on_level_selected(packed_level):
 	add_child(level)
 
 	ball = ball_scene.instance() as Ball
-	ball.global_transform = level.get_node("start").global_transform
+	ball.global_transform = level.get_node("Start").global_transform
 	# ball.global_translate(Vector3(0, 5, 0))
 	add_child(ball)
 	in_level = true
