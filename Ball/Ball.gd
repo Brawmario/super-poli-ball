@@ -1,7 +1,7 @@
 extends RigidBody
 class_name Ball
 
-onready var ball_cam := $ball_cam as Camera
+onready var cam_ball := $CamBall as Camera
 
 export var rot_speed = 5.0
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 func _physics_process(delta) -> void:
 
 	var dir := Vector3()
-	var cam_xform := ball_cam.get_global_transform() as Transform
+	var cam_xform := cam_ball.get_global_transform() as Transform
 
 	# Pegar direção que o jogador quer andar para em relação a camera
 	if (Input.is_action_pressed("ui_up")):
