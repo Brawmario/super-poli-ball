@@ -6,7 +6,7 @@
 next_level_file = "res://Stages/Stage5/Stage5.tscn"
 
 [node name="Start" parent="." index="0"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15, 5, -15 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 15, 5, -15 )
 
 [node name="Goal" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, 15 )

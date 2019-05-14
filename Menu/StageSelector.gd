@@ -11,7 +11,7 @@ func _on_ButStage1_pressed():
 
 
 func _on_ButStage2_pressed():
-	var level_scene = preload("res://Stages/Stage1/Stage1.tscn")
+	var level_scene = preload("res://Stages/Stage2/Stage2.tscn")
 	emit_signal("level_selected", level_scene)
 
 
