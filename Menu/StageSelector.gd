@@ -21,7 +21,8 @@ func _on_ButStage3_pressed():
 
 
 func _on_ButStage4_pressed():
-	pass # Replace with function body.
+	var level_scene = preload("res://Stages/Stage4/Stage4.tscn")
+	emit_signal("level_selected", level_scene)
 
 
 func _on_ButStage5_pressed():
