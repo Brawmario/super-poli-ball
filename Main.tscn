@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 
 [node name="StageSelector" parent="." instance=ExtResource( 2 )]
+[connection signal="level_selected" from="StageSelector" to="." method="_on_StageSelector_level_selected"]

@@ -2,40 +2,47 @@ extends Spatial
 
 var ball_scene = preload("res://Ball/Ball.tscn")
 var level
-var ball
-
+var ball: Ball
 var in_level = false
-# Called when the node enters the scene tree for the first time.
-func _ready():
-#	var level = level_scene.instance()
-#	add_child(level)
-#
-#	var ball := ball_scene.instance() as Ball
-##	ball.global_transform = level.get_node("start").global_transform
-#	# ball.global_translate(Vector3(0, 5, 0))
-#	add_child(ball)
 
-	$StageSelector.connect("level_selected", self, "_on_level_selected")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _unhandled_input(event) -> void:
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_R and in_level:
+			free_level()
+			$StageSelector.show()
 
-func _on_level_selected(packed_level):
+
+func _on_StageSelector_level_selected(packed_level: PackedScene) -> void:
 	$StageSelector.hide()
+	load_level(packed_level)
+
+
+func _on_StageTemplate_level_ended(next_level_file: String) -> void:
+	if not next_level_file:
+		print("No next level to load")
+		return
+
+	free_level()
+	load_level(load(next_level_file))
+
+
+func load_level(packed_level: PackedScene) -> void:
 	level = packed_level.instance()
+	print("Loading level \"", level.name, "\"")
+	level.connect("level_ended", self, "_on_StageTemplate_level_ended")
 	add_child(level)
 
 	ball = ball_scene.instance() as Ball
 	ball.global_transform = level.get_node("Start").global_transform
-	# ball.global_translate(Vector3(0, 5, 0))
 	add_child(ball)
 	in_level = true
 
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_R and in_level:
-			in_level = false
-			remove_child(level)
-			remove_child(ball)
-			$StageSelector.show()
+
+func free_level() -> void:
+	print("Unloading level \"", level.name, "\"")
+	remove_child(level)
+	level.queue_free()
+	remove_child(ball)
+	ball.queue_free()
+	in_level = false

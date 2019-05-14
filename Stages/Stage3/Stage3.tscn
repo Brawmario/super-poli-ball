@@ -3,6 +3,7 @@
 [ext_resource path="res://Stages/StageTemplate.tscn" type="PackedScene" id=1]
 
 [node name="Stage3" instance=ExtResource( 1 )]
+next_level_file = "res://Stages/Stage5/Stage5.tscn"
 
 [node name="Start" parent="." index="0"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15, 5, -15 )

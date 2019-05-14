@@ -5,11 +5,8 @@ onready var cam_ball := $CamBall as Camera
 
 export var rot_speed = 5.0
 
-func _ready() -> void:
-	pass
 
 func _physics_process(delta) -> void:
-
 	var dir := Vector3()
 	var cam_xform := cam_ball.get_global_transform() as Transform
 
