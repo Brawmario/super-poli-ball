@@ -59,7 +59,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 120, 0 ), Vector3( 0, 240, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[node name="Stage5" instance=ExtResource( 1 )]
+[node name="Stage5" index="0" instance=ExtResource( 1 )]
 
 [node name="Start" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
@@ -67,7 +67,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
 [node name="Goal" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30 )
 
-[node name="CSGCombiner" type="CSGCombiner" parent="." index="2"]
+[node name="KillBox" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="." index="3"]
 use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="CSGCombiner" index="0"]
@@ -80,7 +83,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.8962 )
 width = 10.0
 depth = 10.0
 
-[node name="Bridge" type="MeshInstance" parent="." index="3"]
+[node name="Bridge" type="MeshInstance" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.105 )
 mesh = SubResource( 1 )
 material/0 = null
@@ -94,7 +97,7 @@ shape = SubResource( 6 )
 autoplay = "rotate"
 anims/rotate = SubResource( 3 )
 
-[node name="Bridge2" type="MeshInstance" parent="." index="4"]
+[node name="Bridge2" type="MeshInstance" parent="." index="5"]
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -107,7 +110,7 @@ shape = SubResource( 6 )
 autoplay = "rotate"
 anims/rotate = SubResource( 4 )
 
-[node name="Bridge3" type="MeshInstance" parent="." index="5"]
+[node name="Bridge3" type="MeshInstance" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.8299 )
 mesh = SubResource( 1 )
 material/0 = null

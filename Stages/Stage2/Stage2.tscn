@@ -11,7 +11,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10 )
 [node name="Goal" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.5, -30 )
 
-[node name="Base" type="CSGCombiner" parent="." index="2"]
+[node name="KillBox" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0 )
+
+[node name="Base" type="CSGCombiner" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 10 )
 use_collision = true
 
@@ -21,7 +24,7 @@ width = 5.0
 height = 1.0
 depth = 5.0
 
-[node name="Ramp" type="CSGCombiner" parent="." index="3"]
+[node name="Ramp" type="CSGCombiner" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10 )
 use_collision = true
 
@@ -45,7 +48,7 @@ width = 6.0
 height = 3.0
 depth = 5.0
 
-[node name="Ramp2" type="CSGCombiner" parent="." index="4"]
+[node name="Ramp2" type="CSGCombiner" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
 use_collision = true
 
@@ -69,7 +72,7 @@ width = 6.0
 height = 3.0
 depth = 5.0
 
-[node name="End" type="CSGCombiner" parent="." index="5"]
+[node name="End" type="CSGCombiner" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
 use_collision = true
 
