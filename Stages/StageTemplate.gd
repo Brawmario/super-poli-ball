@@ -12,8 +12,12 @@ func _on_Goal_animation_finished():
 func _on_KillBox_body_entered(body: Ball):
 	if not body:
 		return
+
+	body.dissolve()
+
 	yield(get_tree().create_timer(2.0), "timeout")
+	body.reset_dissolve()
 	body.linear_velocity = Vector3()
 	body.angular_velocity = Vector3()
 	body.global_transform = $Start.global_transform
-	body.cam_ball.global_transform.origin = $Start.global_transform.origin + Vector3(0, 2.5, 5)
+	body.cam_ball.global_transform.origin = $Start.global_transform.origin + Vector3(0, 2.5, 5).rotated(Vector3.UP, $Start.rotation.y)

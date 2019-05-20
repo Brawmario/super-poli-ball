@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ball/Ball.gd" type="Script" id=1]
-[ext_resource path="res://Ball/Materials/wood_material.tres" type="Material" id=2]
+[ext_resource path="res://Ball/Materials/wood_dissolve_shader.tres" type="Material" id=2]
 [ext_resource path="res://Ball/CamBall.gd" type="Script" id=3]
 
 [sub_resource type="SphereMesh" id=1]
