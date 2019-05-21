@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, -15 ), Vector3( 5, 0, -15 ), Vector3( 0, 0, -15 ), Vector3( -5, 0, -15 ), Vector3( 0, 0, -15 ) ]
 }
 
-[node name="Stage4" index="0" instance=ExtResource( 1 )]
+[node name="Stage4" instance=ExtResource( 1 )]
 next_level_file = "res://Stages/Stage5/Stage5.tscn"
 
 [node name="Start" parent="." index="0"]
