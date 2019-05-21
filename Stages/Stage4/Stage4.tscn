@@ -101,13 +101,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Platform1" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Platform1" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform1/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Platform1/KinematicBody" index="0"]
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform1" index="1"]
 autoplay = "translation"
+playback_process_mode = 0
 anims/translation = SubResource( 5 )
 
 [node name="Platform2" type="MeshInstance" parent="." index="6"]
@@ -115,13 +116,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Platform2" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Platform2" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform2/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Platform2/KinematicBody" index="0"]
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2" index="1"]
 autoplay = "translation"
+playback_process_mode = 0
 anims/translation = SubResource( 6 )
 
 [node name="Platform3" type="MeshInstance" parent="." index="7"]
@@ -129,11 +131,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Platform3" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Platform3" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Platform3/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Platform3/KinematicBody" index="0"]
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform3" index="1"]
 autoplay = "translation"
+playback_process_mode = 0
 anims/translation = SubResource( 7 )

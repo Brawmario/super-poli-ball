@@ -89,26 +89,28 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.105 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Bridge" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Bridge" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Bridge/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Bridge/KinematicBody" index="0"]
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bridge" index="1"]
 autoplay = "rotate"
+playback_process_mode = 0
 anims/rotate = SubResource( 3 )
 
 [node name="Bridge2" type="MeshInstance" parent="." index="5"]
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Bridge2" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Bridge2" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Bridge2/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Bridge2/KinematicBody" index="0"]
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bridge2" index="1"]
 autoplay = "rotate"
+playback_process_mode = 0
 anims/rotate = SubResource( 4 )
 
 [node name="Bridge3" type="MeshInstance" parent="." index="6"]
@@ -116,11 +118,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.8299 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Bridge3" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="Bridge3" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Bridge3/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Bridge3/KinematicBody" index="0"]
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bridge3" index="1"]
 autoplay = "rotate"
+playback_process_mode = 0
 anims/rotate = SubResource( 5 )
