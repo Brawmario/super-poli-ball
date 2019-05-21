@@ -60,6 +60,7 @@ tracks/0/keys = {
 }
 
 [node name="Stage5" instance=ExtResource( 1 )]
+next_level_file = "res://Stages/Stage6/Stage6.tscn"
 
 [node name="Start" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
