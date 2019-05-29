@@ -38,3 +38,8 @@ func _on_ButStage6_pressed():
 func _on_ButStage7_pressed():
 	var level_scene = preload("res://Stages/Stage7/Stage7.tscn")
 	emit_signal("level_selected", level_scene)
+
+
+func _on_ButStage8_pressed():
+	var level_scene = preload("res://Stages/Stage8/Stage8.tscn")
+	emit_signal("level_selected", level_scene)

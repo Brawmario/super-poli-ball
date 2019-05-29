@@ -57,6 +57,12 @@ margin_top = 144.0
 margin_right = 1040.0
 margin_bottom = 164.0
 text = "Estágio 7"
+
+[node name="ButStage8" type="Button" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 1040.0
+margin_bottom = 188.0
+text = "Estágio 8"
 [connection signal="pressed" from="VBoxContainer/ButStage1" to="." method="_on_ButStage1_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButStage2" to="." method="_on_ButStage2_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButStage3" to="." method="_on_ButStage3_pressed"]
@@ -64,3 +70,4 @@ text = "Estágio 7"
 [connection signal="pressed" from="VBoxContainer/ButStage5" to="." method="_on_ButStage5_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButStage6" to="." method="_on_ButStage6_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButStage7" to="." method="_on_ButStage7_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButStage8" to="." method="_on_ButStage8_pressed"]
