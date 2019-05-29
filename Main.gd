@@ -1,4 +1,4 @@
-extends Spatial
+extends Node
 
 var ball_scene = preload("res://Ball/Ball.tscn")
 var level
