@@ -1,8 +1,21 @@
 extends MarginContainer
 
+const DUMMY_TIME := "--:--.---"
+
 var level_scene
 
 signal level_selected(packed_level)
+
+
+func update_times():
+	for stage in SaveManager.save:
+		var label := find_node("Time" + stage) as Label
+		label.text = FN.seconds_to_mm_ss_mmm(SaveManager.save[stage].time)
+
+
+func _ready():
+	SaveManager.load_save()
+	update_times()
 
 
 func _on_ButStage1_pressed():
@@ -43,3 +56,10 @@ func _on_ButStage7_pressed():
 func _on_ButStage8_pressed():
 	var level_scene = preload("res://Stages/Stage8/Stage8.tscn")
 	emit_signal("level_selected", level_scene)
+
+
+func _on_ButClearTimes_pressed():
+	for label in get_tree().get_nodes_in_group("TimeLabels"):
+		SaveManager.save.clear()
+		SaveManager.save_dict_to_file()
+		label.text = DUMMY_TIME

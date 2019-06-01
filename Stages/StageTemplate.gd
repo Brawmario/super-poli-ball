@@ -10,18 +10,12 @@ var level_ended := false
 func _process(delta: float) -> void:
 	if not level_ended:
 		time += delta
-		var mil := String(time - floor(time))
-		mil = mil.pad_decimals(2)
-		mil.erase(0, 2)
-		var sec := String(int(time) % 60)
-		sec = sec.pad_zeros(2)
-		var minutes := String(int(time) / 60)
-		minutes = minutes.pad_zeros(2)
-		$StageUI/Time.text = minutes + ":" + sec + "." + mil
+		$StageUI/Time.text = FN.seconds_to_mm_ss_mmm(time)
 
 
 func _on_Goal_ball_entered():
 	level_ended = true
+	SaveManager.save_best_stage_time(name, time)
 
 
 func _on_Goal_animation_finished():

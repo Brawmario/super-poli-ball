@@ -24,6 +24,11 @@ config/name="super-poli-ball"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+FN="*res://AutoLoad/FN.gd"
+SaveManager="*res://AutoLoad/SaveManager.gd"
+
 [display]
 
 window/size/width=1280

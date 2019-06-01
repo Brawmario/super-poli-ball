@@ -5,11 +5,15 @@ var level
 var ball: Ball
 var in_level = false
 
+func _ready():
+	SaveManager.load_save()
 
 func _unhandled_input(event) -> void:
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_R and in_level:
 			free_level()
+			SaveManager.save_dict_to_file()
+			$StageSelector.update_times()
 			$StageSelector.show()
 
 
