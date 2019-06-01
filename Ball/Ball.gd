@@ -9,14 +9,14 @@ export var rot_speed = 5.0
 var _time := -1.0
 var dissolving := false
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if dissolving:
 		_time += delta
 		_set_dissolve_shader()
 
-func _physics_process(delta) -> void:
+func _physics_process(delta: float) -> void:
 	var dir := Vector3()
-	var cam_xform := cam_ball.get_global_transform() as Transform
+	var cam_xform := cam_ball.get_global_transform()
 
 	# Pegar direção que o jogador quer andar para em relação a camera
 	dir += -cam_xform.basis[2] * Input.get_action_strength("move_up")
@@ -34,18 +34,18 @@ func _physics_process(delta) -> void:
 	# Aplicar torque a bola para que ela gire no sentido desejado
 	add_torque(target_axis*rot_speed)
 
-func dissolve():
+func dissolve() -> void:
 	dissolving = true
 	_time = -1.0
 
 
-func reset_dissolve():
+func reset_dissolve() -> void:
 	dissolving = false
 	_time = -1.0
 	_set_dissolve_shader()
 
 
-func _set_dissolve_shader():
-		var mat = mesh.get_surface_material(0) as ShaderMaterial
-		var time = mat.get_shader_param("time")
-		mat.set_shader_param("_time", _time)
+func _set_dissolve_shader() -> void:
+	var mat := mesh.get_surface_material(0) as ShaderMaterial
+	var time = mat.get_shader_param("time")
+	mat.set_shader_param("_time", _time)
