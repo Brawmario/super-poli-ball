@@ -3,10 +3,8 @@ extends Node
 var ball_scene = preload("res://Ball/Ball.tscn")
 var level
 var ball: Ball
-var in_level = false
+var in_level := false
 
-func _ready():
-	SaveManager.load_save()
 
 func _unhandled_input(event) -> void:
 	if event is InputEventKey:

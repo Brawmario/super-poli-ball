@@ -2,15 +2,20 @@ extends MarginContainer
 
 const DUMMY_TIME := "--:--.---"
 
-var level_scene
-
 signal level_selected(packed_level)
 
 
 func update_times():
+	var keys_to_remove := []
 	for stage in SaveManager.save:
 		var label := find_node("Time" + stage) as Label
+		if not label:
+			# Invalid level name, mark for deletion and skip
+			keys_to_remove.push_back(stage)
+			continue
 		label.text = FN.seconds_to_mm_ss_mmm(SaveManager.save[stage].time)
+	for key in keys_to_remove:
+		SaveManager.save.erase(key)
 
 
 func _ready():
