@@ -9,7 +9,8 @@ func load_save() -> void:
 		return
 	save_file.open(SAVE_PATH, File.READ)
 	var json := JSON.parse(save_file.get_as_text())
-	save = json.result
+	if json.error == OK:
+		save = json.result
 	save_file.close()
 
 
