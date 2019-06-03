@@ -19,7 +19,6 @@ func update_times():
 
 
 func _ready():
-	SaveManager.load_save()
 	update_times()
 
 
