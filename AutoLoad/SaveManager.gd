@@ -22,7 +22,7 @@ func load_save() -> void:
 func save_dict_to_file() -> void:
 	var save_file := File.new()
 	save_file.open(SAVE_PATH, File.WRITE)
-	save_file.store_string(JSON.print(save))
+	save_file.store_string(JSON.print(save, "\t"))
 	save_file.close()
 
 
