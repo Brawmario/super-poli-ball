@@ -4,6 +4,7 @@ class_name Ball
 onready var cam_ball := $CamBall as Camera
 onready var mesh := $MeshSphere as MeshInstance
 
+export(Material) var material = preload("res://Ball/Materials/wood_dissolve_shader.tres")
 export var rot_speed = 5.0
 
 var _time := -1.0
@@ -11,7 +12,12 @@ var dissolving := false
 
 
 func _ready() -> void:
+	mesh.set_surface_material(0, material)
 	reset_dissolve()
+	if mesh.get_surface_material(0) == preload("res://Ball/Materials/wood_dissolve_shader.tres"):
+		$MeshSphere/Sprite3D.visible = false
+	else:
+		$MeshSphere/Sprite3D.visible = true
 
 
 func _process(delta: float) -> void:
