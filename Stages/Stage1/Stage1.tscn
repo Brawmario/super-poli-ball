@@ -18,5 +18,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
 use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="CSGCombiner" index="0"]
-width = 40.0
-depth = 40.0
+width = 15.0
+depth = 35.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="CSGCombiner" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.501, 0, -7 )
+operation = 2
+radius = 5.718
+height = 3.0
+sides = 20
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="CSGCombiner" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.501, 0, -7 )
+operation = 2
+radius = 5.718
+height = 3.0
+sides = 20
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16243 )
+operation = 2
+radius = 5.718
+height = 11.2598
+sides = 20

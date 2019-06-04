@@ -9,10 +9,16 @@ export var rot_speed = 5.0
 var _time := -1.0
 var dissolving := false
 
+
+func _ready() -> void:
+	reset_dissolve()
+
+
 func _process(delta: float) -> void:
 	if dissolving:
 		_time += delta
 		_set_dissolve_shader()
+
 
 func _physics_process(delta: float) -> void:
 	var dir := Vector3()
@@ -33,6 +39,7 @@ func _physics_process(delta: float) -> void:
 
 	# Aplicar torque a bola para que ela gire no sentido desejado
 	add_torque(target_axis*rot_speed)
+
 
 func dissolve() -> void:
 	dissolving = true

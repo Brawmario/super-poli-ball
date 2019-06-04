@@ -6,13 +6,12 @@ var ball: Ball
 var in_level := false
 
 
-func _unhandled_input(event) -> void:
-	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_R and in_level:
-			free_level()
-			SaveManager.save_dict_to_file()
-			$StageSelector.update_times()
-			$StageSelector.show()
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("return") and in_level:
+		free_level()
+		SaveManager.save_dict_to_file()
+		$StageSelector.update_times()
+		$StageSelector.show()
 
 
 func _on_StageSelector_level_selected(packed_level: PackedScene) -> void:
