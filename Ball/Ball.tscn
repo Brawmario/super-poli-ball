@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ball/Ball.gd" type="Script" id=1]
-[ext_resource path="res://Ball/Materials/white_plastic_dissolve.tres" type="Material" id=2]
-[ext_resource path="res://Ball/Materials/wood_dissolve_shader.tres" type="Material" id=3]
-[ext_resource path="res://Ball/Materials/gnu_icon.svg" type="Texture" id=4]
-[ext_resource path="res://Ball/CamBall.gd" type="Script" id=5]
+[ext_resource path="res://Ball/Materials/wood_dissolve_shader.tres" type="Material" id=2]
+[ext_resource path="res://Ball/Materials/gnu_icon.svg" type="Texture" id=3]
+[ext_resource path="res://Ball/CamBall.gd" type="Script" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.1
@@ -16,18 +15,18 @@ bounce = 0.1
 [node name="Ball" type="RigidBody"]
 physics_material_override = SubResource( 1 )
 script = ExtResource( 1 )
-material = ExtResource( 2 )
 
 [node name="MeshSphere" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 2 )
 
 [node name="Sprite3D" type="Sprite3D" parent="MeshSphere"]
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
 
 [node name="CamBall" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 2.5, 5 )
-script = ExtResource( 5 )
+fov = 90.0
+script = ExtResource( 4 )

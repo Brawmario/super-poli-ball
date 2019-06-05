@@ -27,6 +27,15 @@ func _on_StageTemplate_level_ended(next_level_file: String) -> void:
 	free_level()
 	load_level(load(next_level_file))
 
+func _on_StageSelector_ball_pressed():
+	$StageSelector.hide()
+	var ball_selector = preload("res://Menu/BallSelector.tscn").instance()
+	add_child(ball_selector)
+	yield(ball_selector, "ball_chosen")
+	remove_child(ball_selector)
+	ball_selector.queue_free()
+	SaveManager.save_dict_to_file()
+	$StageSelector.show()
 
 func load_level(packed_level: PackedScene) -> void:
 	level = packed_level.instance()

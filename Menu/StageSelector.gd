@@ -3,6 +3,7 @@ extends MarginContainer
 const DUMMY_TIME := "--:--.---"
 
 signal level_selected(packed_level)
+signal ball_pressed
 
 
 func update_times():
@@ -11,11 +12,11 @@ func update_times():
 		var label := find_node("Time" + stage) as Label
 		if not label:
 			# Invalid level name, mark for deletion and skip
-			keys_to_remove.push_back(stage)
+			# keys_to_remove.push_back(stage)
 			continue
 		label.text = FN.seconds_to_mm_ss_mmm(SaveManager.save[stage].time)
-	for key in keys_to_remove:
-		SaveManager.save.erase(key)
+	# for key in keys_to_remove:
+		# SaveManager.save.erase(key)
 
 
 func _ready():
@@ -67,3 +68,7 @@ func _on_ButClearTimes_pressed():
 		SaveManager.save.clear()
 		SaveManager.save_dict_to_file()
 		label.text = DUMMY_TIME
+
+
+func _on_ButBola_pressed():
+	emit_signal("ball_pressed")
