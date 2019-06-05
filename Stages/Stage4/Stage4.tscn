@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Stages/StageTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Stages/Floor/Stage4.tres" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 5, 2, 5 )
@@ -15,7 +16,6 @@ size = Vector3( 5, 2, 5 )
 points = PoolVector3Array( -2.5, 1, 2.5, 2.5, 1, -2.5, 2.5, 1, 2.5, -2.5, 1, -2.5, -2.5, -1, 2.5, 2.5, -1, -2.5, 2.5, -1, 2.5, -2.5, -1, -2.5, 2.5, 1, 2.5, -2.5, 1, -2.5, 2.5, 1, -2.5, -2.5, 1, 2.5, 2.5, -1, 2.5, -2.5, -1, -2.5, 2.5, -1, -2.5, -2.5, -1, 2.5, 2.5, 1, 2.5, -2.5, -1, 2.5, -2.5, 1, 2.5, 2.5, -1, 2.5, 2.5, 1, -2.5, -2.5, -1, -2.5, -2.5, 1, -2.5, 2.5, -1, -2.5 )
 
 [sub_resource type="Animation" id=5]
-resource_name = "translation"
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -32,7 +32,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-resource_name = "translation"
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -49,7 +48,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "translation"
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -79,7 +77,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
 
 [node name="Base" type="MeshInstance" parent="." index="3"]
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Base" index="0"]
 
@@ -89,7 +87,7 @@ shape = SubResource( 2 )
 [node name="End" type="MeshInstance" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="End" index="0"]
 
@@ -99,7 +97,7 @@ shape = SubResource( 2 )
 [node name="Platform1" type="MeshInstance" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="KinematicBody" type="KinematicBody" parent="Platform1" index="0"]
 
@@ -114,7 +112,7 @@ anims/translation = SubResource( 5 )
 [node name="Platform2" type="MeshInstance" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="KinematicBody" type="KinematicBody" parent="Platform2" index="0"]
 
@@ -129,7 +127,7 @@ anims/translation = SubResource( 6 )
 [node name="Platform3" type="MeshInstance" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = ExtResource( 2 )
 
 [node name="KinematicBody" type="KinematicBody" parent="Platform3" index="0"]
 
