@@ -4,7 +4,7 @@
 [ext_resource path="res://Stages/Floor/Stage4.tres" type="Material" id=2]
 [ext_resource path="res://Stages/Barriers/barrier.tres" type="Material" id=3]
 
-[node name="Stage2" index="0" instance=ExtResource( 1 )]
+[node name="Stage2" instance=ExtResource( 1 )]
 next_level_file = "res://Stages/Stage3/Stage3.tscn"
 
 [node name="Start" parent="." index="0"]
@@ -36,7 +36,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -10 )
 width = 5.0
 height = 5.0
 depth = 15.0
-material = ExtResource( 3 )
+material = ExtResource( 2 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Ramp" index="1"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.5, -10 )
@@ -52,7 +52,7 @@ operation = 2
 width = 6.0
 height = 3.0
 depth = 5.0
-material = ExtResource( 3 )
+material = ExtResource( 2 )
 
 [node name="Ramp2" type="CSGCombiner" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
@@ -63,7 +63,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -10 )
 width = 5.0
 height = 5.0
 depth = 15.0
-material = ExtResource( 3 )
+material = ExtResource( 2 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Ramp2" index="1"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.5, -10 )
@@ -79,7 +79,7 @@ operation = 2
 width = 6.0
 height = 3.0
 depth = 5.0
-material = ExtResource( 3 )
+material = ExtResource( 2 )
 
 [node name="End" type="CSGCombiner" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
