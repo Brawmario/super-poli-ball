@@ -21,6 +21,7 @@ func update_times():
 
 func _ready():
 	update_times()
+	$HBoxContainer/VBoxContainer/ButStage1.grab_focus()
 
 
 func _on_ButStage1_pressed():

@@ -12,6 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		SaveManager.save_dict_to_file()
 		$StageSelector.update_times()
 		$StageSelector.show()
+		$StageSelector/HBoxContainer/VBoxContainer/ButStage1.grab_focus()
 
 
 func _on_StageSelector_level_selected(packed_level: PackedScene) -> void:
@@ -36,6 +37,7 @@ func _on_StageSelector_ball_pressed():
 	ball_selector.queue_free()
 	SaveManager.save_dict_to_file()
 	$StageSelector.show()
+	$StageSelector/HBoxContainer/VBoxContainer/ButStage1.grab_focus()
 
 func load_level(packed_level: PackedScene) -> void:
 	level = packed_level.instance()
