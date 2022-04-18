@@ -6,26 +6,26 @@ on:
 
 env:
   GODOT_VERSION: 3.4.4
-  EXPORT_NAME: super-poli-ball
+  GAME_NAME: super-poli-ball
 
 jobs:
   export-game:
     name: Export game
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.4.4
+      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
     strategy:
       matrix:
         include:
           - PLATFORM: windows
             EXPORT_PRESET: 'Windows Desktop'
-            EXPORT_FILENAME: super-poli-ball.exe
+            EXPORT_FILENAME: ${{ env.GAME_NAME }}.exe
           - PLATFORM: linux
             EXPORT_PRESET: 'Linux/X11'
-            EXPORT_FILENAME: super-poli-ball.x86_64
-          - PLATFORM: 'mac'
+            EXPORT_FILENAME: ${{ env.GAME_NAME }}.x86_64
+          - PLATFORM: mac
             EXPORT_PRESET: 'Mac OSX'
-            EXPORT_FILENAME: super-poli-ball.zip
+            EXPORT_FILENAME: ${{ env.GAME_NAME }}.zip
           - PLATFORM: web
             EXPORT_PRESET: 'HTML5'
             EXPORT_FILENAME: index.html
@@ -44,10 +44,10 @@ jobs:
           apt-get update && apt-get install -y rsync
       - name: Build
         run: |
-          mkdir ./${EXPORT_NAME}
-          rsync -Rr . ./${EXPORT_NAME}
+          mkdir ./${GAME_NAME}
+          rsync -Rr . ./${GAME_NAME}
           mkdir -v -p build/${{ matrix.PLATFORM }}
-          cd ${EXPORT_NAME}
+          cd ${GAME_NAME}
           godot -v --export "${{ matrix.EXPORT_PRESET }}" ../build/${{ matrix.PLATFORM }}/${{ matrix.EXPORT_FILENAME }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
@@ -59,7 +59,7 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: ${{ matrix.PLATFORM }}
-          ITCH_GAME: super-poli-ball
+          ITCH_GAME: ${{ env.GAME_NAME }}
           ITCH_USER: brawmario
           PACKAGE: build/${{ matrix.PLATFORM }}
           VERSION: ${{ github.ref_name }}
