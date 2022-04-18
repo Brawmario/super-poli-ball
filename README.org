@@ -16,6 +16,8 @@ modelagem 3D, texturas e iluminação. Em especial, esse projeto fará uso do
 suporte embutido do =Godot= à modelagem CSG para a rápida prototipação de
 estágios. O projeto está hospedado no [[https://github.com/Brawmario/super-poli-ball][GitHub]].
 
+Play it on [[https://brawmario.itch.io/super-poli-ball][itch.io]]
+
 * Lista de afazeres
 
 ** TODO Esboço inicial do projeto
